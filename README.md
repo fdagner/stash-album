@@ -13,4 +13,5 @@ Example: The object with the title "My item" becomes
 ```<div id="myitem" class="photostash"></div>```
 
 ## Screenshot
-![Screenshot]](image.png)
+
+<img width="400" alt="screenshot" src="image.png">
