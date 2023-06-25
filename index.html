@@ -1,0 +1,69 @@
+<div class="albumstash">
+    <h3 style="width:100%">My Sticker Albumm</h3>
+    <div id="chronix" class="photostash"></div>
+    <div id="voltara" class="photostash"></div>
+    <div id="exodron" class="photostash"></div>
+    <div id="fluxor" class="photostash"></div>
+    <div id="quasarix" class="photostash"></div>
+    <div id="vextron" class="photostash"></div>
+    <div id="synthron" class="photostash"></div>
+    <div id="xylon" class="photostash"></div>
+    <div id="zyrona" class="photostash"></div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all elements with the class "block-stash-item" inside the element with the class "item-list".
+        const items = document.querySelectorAll('.item-list .block-stash-item');
+        // Loop through each element
+        items.forEach(item => {
+            // Get title of the element and remove spaces
+            const title = item.getAttribute('title').replace(/\s+/g, '');
+            // Get element with the matching ID
+            const div = document.querySelector(`#${title.toLowerCase()}`);
+            // If the element was found, insert background image as image
+            if (div) {
+                const backgroundImage = item.querySelector('.item-image').style.backgroundImage;
+                const imageUrl = backgroundImage.slice(4, -1).replace(/"/g, "");
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.style.width = '120px'; // Width of the image to 120px
+                div.appendChild(img);
+                const titleEl = document.createElement('div');
+                zahl1 = Math.floor(Math.random() * 40) - 20;
+                div.style.transform = 'rotate(' + zahl1 + 'deg)'; // Random rotation of the image
+                const titleZwei = item.getAttribute('title')
+                titleEl.textContent = titleZwei;
+                div.appendChild(titleEl);
+            }
+        });
+    });
+</script>
+
+<style>
+    .photostash {
+        background-color: white;
+        border: solid 2px black;
+        width: 120px;
+        height: 120px;
+        text-align: center;
+    }
+
+    .albumstash {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 50px;
+        width: 95%;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        background: lightblue;
+        border-radius: 20px;
+        padding: 10px 10px 25px 10px;
+    }
+
+    .photostash img {
+        padding: 5px;
+    }
+</style>
