@@ -28,6 +28,8 @@
                 const img = document.createElement('img');
                 img.src = imageUrl;
                 img.style.width = '120px'; // Width of the image to 120px
+                img.style.height = '120px'; // Height of the image to 120px
+                img.style.objectFit = 'cover';
                 div.appendChild(img);
                 const titleEl = document.createElement('div');
                 zahl1 = Math.floor(Math.random() * 40) - 20;
